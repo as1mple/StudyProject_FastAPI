@@ -9,6 +9,9 @@ setup(
     install_requires=[
         'fastapi',
         'uvicorn',
+        'loguru',
+        'pandas',
+        'sklearn'
     ],
     scripts=['app/main.py']
 )
