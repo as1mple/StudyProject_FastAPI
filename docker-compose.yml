@@ -1,0 +1,7 @@
+version: '1'
+services:
+  app:
+    build: .
+    container_name: fastapi-app
+    network_mode: host
+    command: bash -c "uvicorn app.main:app"
