@@ -30,7 +30,7 @@ def predict_RF(features: RequestDiaParams):
     try:
         test_data = get_testData(features)
         predict = router.modelRandomForest.predict(test_data)[0]
-        predict_proba = router.modelRandomForest.predict_proba(test_data)[0][0]
+        predict_proba = max(router.modelRandomForest.predict_proba(test_data)[0])
 
         return ResponsePredict(predict=predict, probability=predict_proba)
     except Exception as e:
@@ -44,7 +44,7 @@ def predict_LR(features: RequestDiaParams):
     try:
         test_data = get_testData(features)
         predict = router.modelLog.predict(test_data)[0]
-        predict_proba = router.modelLog.predict_proba(test_data)[0][0]
+        predict_proba = max(router.modelLog.predict_proba(test_data)[0])
 
         return ResponsePredict(probability=predict_proba, predict=predict)
 
