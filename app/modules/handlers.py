@@ -6,7 +6,7 @@ import pandas as pd
 
 import pickle
 
-logger.add('deb  ug.log', format="{time} {level} {message}", level="DEBUG", rotation="1 weeks", compression='zip')
+logger.add('debug.log', format="{time} {level} {message}", level="DEBUG", rotation="1 weeks", compression='zip')
 
 router = APIRouter()
 
