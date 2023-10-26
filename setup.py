@@ -11,7 +11,7 @@ setup(
         'uvicorn',
         'loguru',
         'pandas',
-        'sklearn'
+        'scikit-learn'
     ],
     scripts=['app/main.py']
 )

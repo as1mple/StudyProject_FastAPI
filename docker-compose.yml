@@ -3,5 +3,5 @@ services:
   app:
     build: .
     container_name: fastapi-app
-    network_mode: host
-    command: bash -c "uvicorn app.main:app"
+    ports:
+      - "8080:5011"

@@ -1,10 +1,13 @@
 FROM python:3.8
 
-ENV PYTHONUNBUFFERED 1
+COPY requirements.txt ./requirements.txt
 
-EXPOSE 8000
+RUN python -m pip install -U pip && \
+    python -m pip install -r requirements.txt && \
+    python -m pip cache purge
 
-WORKDIR /app
+COPY ./ /app/
 
-COPY . /app
-RUN pip install -e .
+WORKDIR /app/
+
+CMD uvicorn app.main:app --host=0.0.0.0 --port=${PORT:-5011}
